@@ -6,11 +6,12 @@
 
 @section('content')
 <div class="todo__alert">
+  @if(session('message'))
   <div class="todo__alert--success">
-    Todoを作成しました
+    {{ session('message') }}
   </div>
+  @endif
 </div>
-
 <div class="todo__content">
   <form class="create-form" action="/todos" method="post">
   @csrf
