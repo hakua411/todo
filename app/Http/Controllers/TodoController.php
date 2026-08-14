@@ -80,7 +80,7 @@ class TodoController extends Controller
      */
     public function destroy(Request $request)
     {
-        Todo::find($request->id)->delete();
+        Todo::findOrFail($request->id)->delete();
         return redirect('/')->with('message', 'Todoを削除しました');
     }
 }
